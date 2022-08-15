@@ -1,5 +1,8 @@
 #### Exercise 6 ####
+
 #---- Task 1 ----#
+
+# Original buggy code:
 
 # three_mul = 'fizz
 # five_mul = 'buzz'
@@ -8,13 +11,14 @@
 # max_num = 100
    
 # for i in range(1,max_number):
-#     # % or modulo division gives you the remainder 
+#     # % or modulo division gives you the remainder
     
 #     if i%num1 = 0:
 #         print(i, three_mul)
 #     elif i%num2 == 0:
 #         print(i, five_mul)
 #     elif i%num1 == 0 and i%num2 == 0:
+
 #     print(i, three_mul+five_mul)
 
 
@@ -24,32 +28,33 @@
 #     # 4. in the first if statement, = should be ==
 #     # 5. in the second elif, print should be indented
 #     # 6. the second elif should be the if and the others should be elifs so that it checks for 'fizzbuzz' before the others
+# Rewritten code:
 
-# three_mul = 'fizz'
-# five_mul = 'buzz'
-# num1 = 3
-# num2 = 5 
-# max_num = 100
+three_mul = 'fizz'
+five_mul = 'buzz'
+num1 = 3
+num2 = 5 
+max_num = 100
    
-# for i in range(1,max_num):
-#     # % or modulo division gives you the remainder 
+for i in range(1,max_num):
+    # % or modulo division gives you the remainder 
     
-#     if i%num1 == 0 and i%num2 == 0:
-#         print(i, three_mul+five_mul)
-#     elif i%num1 == 0:
-#         print(i, three_mul)
-#     elif i%num2 == 0:
-#         print(i, five_mul)
+    if i%num1 == 0 and i%num2 == 0:
+        print(i, three_mul+five_mul)
+    elif i%num1 == 0:
+        print(i, three_mul)
+    elif i%num2 == 0:
+        print(i, five_mul)
     
 #---- Task 2 ----#
 
-# n = 5
-# number = 1
-# sum = 0
-# while number < n + 1:
-#     sum = sum + number
-#     number = number + 1
-# print("Sum =", sum)
+n = 5
+number = 1
+sum = 0
+while number < n + 1:
+    sum = sum + number
+    number = number + 1
+print("Sum =", sum)
 
 
 # # Bug: during the while loop, sum should be sum + number, not sum +1
@@ -57,18 +62,18 @@
 
 #---- Task 3 ---- #
 
-# n = 5
-# sum = 0
-# for num in range(n+1):
-#     sum += num
-# print("Sum =", sum)
+n = 5
+sum = 0
+for num in range(n+1):
+    sum += num
+print("Sum =", sum)
 
 # Bug: range needs to be n+1, not just n
 
 #---- Task 4 ----#
 
-# for x in range(3):
-#     print(x)
+for x in range(3):
+    print(x)
 
 # # Bug: needs a colon after the range function
 
@@ -76,34 +81,34 @@
 #---- Task 5 ----#
 #---- 1 ----#
 
-# for j in range(5):
-#     print(f"This is loop number {j}")
+for j in range(5):
+    print(f"This is loop number {j}")
 
 # # Bug: it is just printing the letter j. Needs an f-string or comma.
 
 #---- 2 ----#
 
-# x = 10
+x = 10
 
-# while x > 0:
-#     print(x)
-#     x -= 1
+while x > 0:
+    print(x)
+    x -= 1
     
 # Bug: x is defined after the while loop, but it must be before as the value is required for the loop
 
 #---- 3 ----#
 
-# countdown = 5
-# while countdown >=1:
-#     print(f"{countdown}")
-#     countdown -= 1
-# else:
-#     print("Start!")
+countdown = 5
+while countdown >=1:
+    print(f"{countdown}")
+    countdown -= 1
+else:
+    print("Start!")
 
 # Bug: countdown needs a value and the while loop needs a condition to evaluate (before it was evaluating whether 'countdown' was True or False)
 
 #---- 4 ----#
-
+# Original code:
 # x = input("First number: ")
 # y = input("Second number: ")
 # z = input("Third number: "))
@@ -121,15 +126,15 @@
 #       5. values should be converted to integers to prevent string concatenation
 
 #rewritten code:
-# x = int(input("First number: "))
-# y = int(input("Second number: "))
-# z = int(input("Third number: "))
+x = int(input("First number: "))
+y = int(input("Second number: "))
+z = int(input("Third number: "))
 
-# if x == y or y == z or x == z:
-#     result = 0
-# else:
-#     sum = x + y + z
-# print("Calculated sum is ", sum)
+if x == y or y == z or x == z:
+    result = 0
+else:
+    sum = x + y + z
+print("Calculated sum is ", sum)
 
 
 #---- Task 6 ----#
@@ -148,4 +153,67 @@ print("Calculated sum is ", result)
 #       3. if statment should be >= and <= to include 15 and 20 in the value range
 #       4. 'sum' variable should be 'result' so it can be printed
 #       5. if statement should be 'and', not 'or' (otherwise will return 20 for all sums less than 20, rather than just 15-20)
+
+#---- Task 7----#
+a = input("First value: ")
+b = input("Second value: ")
+
+print("Before swapping: a =", a, " ,b = ", b)
+
+temp = a
+a = b
+b = temp
+
+print("After swapping: a =", a, " ,b = ", b)
+
+# Bugs: 1. need to use input to request input from user
+#       2. syntax needed updating in both print statements to it prints the value of the b variable and not just the string 'b'
+#       3. b needs to be assigned the value of 'temp' which was the original value of a
+#       4. the input should not be converted to an integer using the int() function as the user then cannot enter other data types such as strings
+
+#---- Task 8 ----#
+x = input("First number: ")
+y = input("Second number: ")
+z = input("Third number: ")
+
+print("The maximum value is ", max(x, y ,z))
+print("The minimum value is ", min(x, y ,z))
+
+# Bugs: 1. the inputs should be assigned with "=", not "=="
+#       2. the max value should be calculated using the max() function
+#       3. the min value should be calculated using the min() function, not the abs() function
+
+
+#---- Task 9 ----#
+x = input("Type your value: ")
+
+if x == "0":
+    x = False
+elif x == "1":
+    x = True
+
+print("Your entered value is now", x)
+
+# Bugs: 1. missing " at end of input
+#       2. for if and elif statements, x should be evaluated using "==", not "="
+#       3. True and False should be capitilised
+#       3. else statement is redundant (if used, pass should be indented)
+#       4. must check x against "0" and "1" (instead of 0 and 1) as x is automatically a str and conversion to int would mean that strings 
+#         (such as "hi" can't be entered
+
+#---- Task 10 ----#
+x = int(input("First number: "))
+y = int(input("Second number: "))
+
+if x % y == 0:
+    print("First number is divisible by second number, result =", x // y)
+elif y % x == 0:
+    print("Second number is divisible by first number, result =", y // x)
+else:
+    print("Numbers are non-divisable!")
+
+# Bugs: 1. only ned one % sign (not %%)
+#       2. comparitor should be == 0, not >=0 or !=0
+#       3. elif statement should be y%x, not y%y
+#       4. inputs must be converted to integer values using int() function
 
